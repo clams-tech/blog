@@ -89,7 +89,7 @@ Generate essential reports like capital gains, taxes, and profit and loss. Wheth
 
 We’re building Clams to make Bitcoin accounting simple, private, and powerful—because we’ve lived through the frustrations ourselves. Whether you’re a small business, a node operator, or someone tired of spreadsheets, Clams is for you.
 
-Our enterprise launch is coming in 2025, but you can join the waitlist today for early access. Together, let’s build the tools Bitcoin deserves.
+Our enterprise launch is coming in 2025, but you can join the waitlist today for early access.
 
 👉 [Get early access to Clams Enterprise](http://eepurl.com/i5kuF-/)  
 🌐 [Visit us at clams.tech](https://clams.tech)

@@ -43,16 +43,16 @@
       );
     </script>
   </head>
+  {% if page is not defined %}
+  <!-- Render header only on the homepage -->
+  <header class="header">
+    <a href="/">
+      <h1>Clams Blog</h1>
+    </a>
+    <p>Accounting for a Bitcoin Standard.</p>
+  </header>
+  {% endif %}
   <body>
-    {% if page is not defined %}
-    <!-- Render header only on the homepage -->
-    <header class="header">
-      <a href="/">
-        <h1>Clams Blog</h1>
-      </a>
-      <p>Accounting for a Bitcoin Standard.</p>
-    </header>
-    {% endif %}
     <div class="content">
       {% block content %}
       <div class="posts">
@@ -70,4 +70,30 @@
       {% endblock content %}
     </div>
   </body>
+  <footer class="footer">
+    <a href="https://clams.tech" target="_blank" rel="noopener noreferrer"
+      >About</a
+    >
+    <a
+      href="https://clams.tech/downloads"
+      target="_blank"
+      rel="noopener noreferrer"
+      >App</a
+    >
+    <a
+      href="https://discord.gg/eWfHuJZVaB"
+      target="_blank"
+      rel="noopener noreferrer"
+      >Discord</a
+    >
+    <a
+      href="https://nostr.at/npub136hk9wu6xnrz64kfaapsvgc5rfnylz4djlx4w30w66h6cy48vhws3gth6q"
+      target="_blank"
+      rel="noopener noreferrer"
+      >Nostr</a
+    >
+    <a href="https://x.com/clamstech" target="_blank" rel="noopener noreferrer"
+      >X</a
+    >
+  </footer>
 </html>

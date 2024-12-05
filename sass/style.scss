@@ -25,8 +25,10 @@ RESET
 
 html,
 body {
+  height: 100%;
   margin: 0;
-  padding: 0;
+  display: flex;
+  flex-direction: column; 
 }
 
 
@@ -202,34 +204,31 @@ tbody tr:nth-child(odd) th {
   font-weight: 300;
 }
 
-/*
- * Messages
- *
- * Show alert messages to users. You may add it to single elements like a `<p>`,
- * or to a parent if there are multiple elements to show.
- */
-.message {
-  margin-bottom: 1em;
-  padding: 1em;
-  color: #717171;
-  background-color: #f9f9f9;
-}
-
 .header {
   background:#EAF6FF;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 1em;
+  border-bottom: 1px solid #ddd;
 }
 
 /*
  * Content
- *
- * Center the page content.
  */
 .content {
+  flex: 1;
   padding: 1em;
+}
+
+.footer {
+  background: #EAF6FF;
+  border-top: 1px solid #ddd; 
+  display: flex;
+  gap: 1em;
+  justify-content: center;
+  padding: 1em;
+  text-align: center;
 }
 
 /*
@@ -252,7 +251,7 @@ tbody tr:nth-child(odd) th {
   }
 }
 
-/* Blog post */
+/* Blog post  */
 .page-header {
   margin-bottom: 2em;
 
@@ -275,6 +274,19 @@ tbody tr:nth-child(odd) th {
 .page-title,
 .post-title {
   margin-top: 0;
+}
+
+/*
+ * Messages
+ *
+ * Show alert messages to users. You may add it to single elements like a `<p>`,
+ * or to a parent if there are multiple elements to show.
+ */
+ .message {
+  margin-bottom: 1em;
+  padding: 1em;
+  color: #717171;
+  background-color: #f9f9f9;
 }
 
 /* Footnotes */
@@ -338,3 +350,5 @@ a.pagination-item:hover {
     border-bottom-right-radius: 4px;
   }
 }
+
+
