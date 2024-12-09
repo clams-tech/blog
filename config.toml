@@ -3,7 +3,7 @@ title="Clams"
 description="Accounting for a Bitcoin standard."
 
 # The URL the site will be built for
-base_url = "https://blog.clams.tech"
+base_url = "https://clams-blog.surge.sh/"
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true

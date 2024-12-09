@@ -221,11 +221,36 @@ tbody tr:nth-child(odd) th {
 .footer {
   background: #EAF6FF;
   border-top: 1px solid #ddd; 
-  display: flex;
   gap: 1em;
-  justify-content: center;
   padding: 1em;
   text-align: center;
+
+  .form {
+    margin: 0 auto;
+
+    .input-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+     
+     input {
+      height: 40px;
+      margin: 0;
+     }
+
+     button {
+      background-color: black;
+      color: white;
+      border-radius: 3px;
+      height: 40px;
+      padding: 0 1em;
+     }
+
+     button:hover {
+      cursor: pointer;
+     }
+    }
+  }
 }
 
 /*
