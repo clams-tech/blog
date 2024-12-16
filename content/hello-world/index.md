@@ -49,7 +49,7 @@ Today, there’s no Bitcoin-first solution that addresses these issues.
 
 Clams does this by syncing data from all your wallets—locally. The app automatically organizes your transactions, tracks wallet transfers, and transforms raw data into actionable insights.
 
-We built Clams to solve our own problem. As a company attempting to operate on a Bitcoin standard, we understand firsthand the accounting challenges that are slowing the adoption of circular economies.
+We built Clams to solve our own problem. As a company attempting to operate on a Bitcoin standard, we understand firsthand the challenges that are slowing the adoption of circular economies.
 
 ---
 
@@ -75,7 +75,7 @@ Quickly generate essential reports capital gains and profit and loss—saving ti
 
 ### Join Us
 
-We’re building Clams to make Bitcoin accounting simple, private, and powerful—because we’ve experienced the frustrations firsthand. Whether you’re a small business, a node operator, or someone tired of wrestling with spreadsheets, Clams is for you.
+Whether you’re a small business, a node operator, or someone tired of wrestling with spreadsheets, Clams is for you.
 
 Who Can Benefit Today:
 
@@ -84,9 +84,7 @@ Who Can Benefit Today:
 - **Lightning node operators**: Professionals tracking routing profitability and optimizing performance.
 - **Bitcoin startups**: Builders who struggle to onboard businesses due to inadequate accounting tools.
 
-We started with a personal and private accounting app tailored to individuals and small businesses. Through research, we discovered that larger businesses often prioritize features like scalability and multi-user access over privacy. That’s why we’re expanding our vision with an Enterprise offering. For those who value owning their own data, the native app will remain a great solution.
-
-Bitcoin isn’t just better money—it’s a foundation for better accounting. Clams is here to make that vision a reality.
+We started with a personal and private desktop app tailored to individuals and small businesses. Through research, we discovered that larger businesses often prioritize features like scalability and multi-user access over privacy. That’s why we’re expanding our vision with an Enterprise offering. For those who value owning their own data, the native app will remain a great solution.
 
 Our Enterprise launch is coming in 2025, but you can join the waitlist today for early access.
 
