@@ -35,7 +35,8 @@ body {
 html {
   font-family: "Writer", 'Courier New', Courier, monospace;
   font-size: 16px;
-  color: #313131;
+  background-color: #fdfded;
+  color: #4c5461;
 }
 
 body {
@@ -45,8 +46,9 @@ body {
 
 /* No `:visited` state is required by default (browsers will use `a`) */
 a {
-  text-decoration: none;
-  color: #313131;
+  text-decoration-color: color-mix(in oklab, var(#0751cf) 20%, transparent);
+  // color: #0751cf;
+  color: #072455;
 }
 /* `:focus` is linked to `:hover` for basic accessibility */
 a:hover,
@@ -60,7 +62,8 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: .5em;
   font-weight: bold;
   line-height: 1.25;
-  color: #313131;
+  // color: #0751cf;
+  color: #072455;
   text-rendering: optimizeLegibility;
 }
 h1 {
@@ -141,6 +144,9 @@ pre code {
   color: inherit;
   background-color: transparent;
 }
+strong {
+  font-weight: bold;
+}
 .highlight {
   margin-bottom: 1em;
   border-radius: 4px;
@@ -202,12 +208,21 @@ tbody tr:nth-child(odd) th {
 }
 
 .header {
-  background:#EAF6FF;
+  // background: #072455;
+  // color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1em;
-  border-bottom: 1px solid #ddd;
+  padding: 1em 1em 2em 1em;
+  // border-bottom: 1px solid #ddd;
+
+  h1 {
+    // color: white;
+  }
+
+  p {
+    margin-bottom: 0.25em;
+  }
 }
 
 /*
@@ -219,11 +234,16 @@ tbody tr:nth-child(odd) th {
 }
 
 .footer {
-  background: #EAF6FF;
+  background: #3563b3;
+  // background: #072455;
   border-top: 1px solid #ddd; 
   gap: 1em;
   padding: 1em;
   text-align: center;
+
+  a {
+    color: white;
+  }
 
   .form {
     margin: 0 auto;
@@ -253,46 +273,37 @@ tbody tr:nth-child(odd) th {
   }
 }
 
-/*
- * Posts and pages
- *
- * Each post is wrapped in `.post` and is used on default and post layouts. Each
- * page is wrapped in `.page` and is only used on the page layout.
- */
-.page,
-.post {
-  padding: 2em 0 4em 0;
+ .posts,.page {
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .post {
-  max-width: 800px;
-  margin: 0 auto;
+  margin: 1em 0;
   .post-date {
     font-size: small;
-    color: grey;
   }
 }
 
 /* Blog post  */
-.page-header {
-  margin-bottom: 2em;
+.page {
+  padding: 2em 0 4em 0;
+  
+  .page-header {
+    margin-bottom: 2em;
 
-  .link-to-blog {
-    text-decoration: underline;
-    font-size: small;
-  }
+    .link-to-blog {
+      text-decoration: underline;
+      font-size: small;
+    }
 
-  h1 {
-    margin: 0;
-    margin-top: 0.25em;
-   
+    h1 {
+      margin: 0;
+      margin-top: 0.25em;
+    }
   }
 }
-.page-title,
-.post-title,
-.post-title a {
-  color: #313131;
-}
+
 .page-title,
 .post-title {
   margin-top: 0;

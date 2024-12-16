@@ -1,27 +1,25 @@
 +++
 title = "Hello World"
-date = 2024-11-26
+date = 2024-11-27
 +++
 
-> **Clams is accounting software for Bitcoin.** Sync all your Bitcoin data in one place, gain insights, and generate reports. With full support for On-chain and Lightning, Clams helps individuals and businesses operate on a Bitcoin standard. The Enterprise version is Launching in 2025—[join the waitlist](http://eepurl.com/i5kuF-/) for early access.
+> Bring all your Bitcoin data together, gain actionable insights, and simplify decision-making. With full support for On-chain and Lightning, Clams helps individuals and businesses operate on a Bitcoin standard. The Enterprise version is Launching in 2025—[join the waitlist](http://eepurl.com/i5kuF-/) for early access.
 
 ---
 
 ### Background
 
-It started with a simple question: **_Can we live on a Bitcoin standard today?_**
+It all started with a simple question: **_Can we live on a Bitcoin standard today?_**
 
-To find out, we ran Lightning nodes for daily payments and paired them with services like Bitrefill and MoonPay. The main challenges became clear: every spend was a taxable event, and accounting for complex transactions, like force-closed channels, became a logistical nightmare.
+To find out, we ran Lightning nodes for daily payments and paired them with services like [Bitrefill](https://www.bitrefill.com/). The challenges quickly became apparent: every spend triggered a taxable event, and accounting for complex scenarios—like force-closed channels—turned into a logistical nightmare.
 
-#### Growing Complexity
+And that’s just Lightning. Like many Bitcoin holders, we have funds spread across various setups: single-sig, multi-sig, and mobile wallets. Meanwhile, new payment protocols like [Ark](https://bitcoinmagazine.com/technical/how-ark-plans-to-scale-private-bitcoin-payments) and [Cashu](https://bitcoinmagazine.com/technical/cashu-a-vision-for-a-bitcoin-powered-ecash-ecosystem), along with emerging economic models like [_Value for Value_](https://www.samara-ag.com/market-insights/value-for-value), are adding even more layers of complexity.
 
-Many holders spread funds across various places like single-sig, multi-sig, and mobile wallets. Emerging payment protocols like Ark and Cashu are adding even more options. New economic models like _Value for Value_ are redefining how creators interact with their audiences.
+This abundance of options makes Bitcoin incredibly powerful—but also increasingly difficult to track and manage.
 
-All of this optionality makes Bitcoin powerful but also harder to track and manage.
+The reality? Most Bitcoin holders avoid spending because tracking capital gains is tedious and time-consuming. For businesses, generating essential reports like profit and loss statements or cash flow analyses is even harder.
 
-The reality? Most Bitcoin holders avoid spending because tracking capital gains is tedious and time-consuming. For businesses, trying to generate essential reports like profit and loss or cash flow is even harder.
-
-Bitcoin may be the best money, but without a dedicated accounting tool, it’s far from practical for everyday use.
+Bitcoin may be the best form of money, but it’s far from practical for everyday use.
 
 ![Audit image](./audit.jpg)
 
@@ -47,18 +45,11 @@ Today, there’s no Bitcoin-first solution that addresses these issues.
 
 ### Clams Fixes This
 
-**Enter Clams**: a desktop app that preserves your privacy while giving you a complete view of your Bitcoin holdings. Built for individuals and businesses alike, Clams is designed to make Bitcoin accounting effortless.
+**Enter Clams**: a desktop app that preserves your privacy while giving you a complete view of your Bitcoin holdings. Built for individuals and businesses alike, Clams is designed to give you everything you need to live on a Bitcoin Standard.
 
-Clams takes the hassle out of Bitcoin accounting by syncing data from all your wallets—locally. The app automatically organizes your transactions, tracks wallet transfers, and transforms raw data into actionable insights.
+Clams does this by syncing data from all your wallets—locally. The app automatically organizes your transactions, tracks wallet transfers, and transforms raw data into actionable insights.
 
 We built Clams to solve our own problem. As a company attempting to operate on a Bitcoin standard, we understand firsthand the accounting challenges that are slowing the adoption of circular economies.
-
-#### Who Can Benefit Today:
-
-- **Small businesses**: Merchants accepting Bitcoin who need accurate, easy-to-generate financial reports.
-- **Bitcoin-native founders**: Teams managing reserves and reporting financials to investors.
-- **Lightning node operators**: Professionals tracking routing profitability and optimizing performance.
-- **Bitcoin startups**: Builders who struggle to onboard businesses due to inadequate accounting tools.
 
 ---
 
@@ -85,6 +76,13 @@ Quickly generate essential reports capital gains and profit and loss—saving ti
 ### Join Us
 
 We’re building Clams to make Bitcoin accounting simple, private, and powerful—because we’ve experienced the frustrations firsthand. Whether you’re a small business, a node operator, or someone tired of wrestling with spreadsheets, Clams is for you.
+
+Who Can Benefit Today:
+
+- **Small businesses**: Merchants accepting Bitcoin who need accurate, easy-to-generate financial reports.
+- **Bitcoin-native founders**: Teams managing reserves and reporting financials to investors.
+- **Lightning node operators**: Professionals tracking routing profitability and optimizing performance.
+- **Bitcoin startups**: Builders who struggle to onboard businesses due to inadequate accounting tools.
 
 We started with a personal and private accounting app tailored to individuals and small businesses. Through research, we discovered that larger businesses often prioritize features like scalability and multi-user access over privacy. That’s why we’re expanding our vision with an Enterprise offering. For those who value owning their own data, the native app will remain a great solution.
 
