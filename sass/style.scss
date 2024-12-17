@@ -94,6 +94,9 @@ ul, ol, dl {
   margin-bottom: 1.5em;
   li {
    margin-bottom: 0.5em;
+   word-wrap: break-word; 
+   overflow-wrap: break-word; 
+   white-space: normal; 
   }
 }
 
@@ -208,17 +211,11 @@ tbody tr:nth-child(odd) th {
 }
 
 .header {
-  // background: #072455;
-  // color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 1em 1em 2em 1em;
-  // border-bottom: 1px solid #ddd;
-
-  h1 {
-    // color: white;
-  }
+  border-bottom: 1px solid #ddd;
 
   p {
     margin-bottom: 0.25em;
@@ -235,7 +232,6 @@ tbody tr:nth-child(odd) th {
 
 .footer {
   background: #3563b3;
-  // background: #072455;
   border-top: 1px solid #ddd; 
   gap: 1em;
   padding: 1em;
@@ -261,7 +257,7 @@ tbody tr:nth-child(odd) th {
      button {
       background-color: black;
       color: white;
-      border-radius: 3px;
+      border-radius: 5px;
       height: 40px;
       padding: 0 1em;
      }
