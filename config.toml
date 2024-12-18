@@ -1,6 +1,6 @@
-title="Clams"
+title="Clams Blog"
 
-description="Accounting for a Bitcoin standard."
+description="Personal Finance and Business Analytics for a Bitcoin Standard."
 
 # The URL the site will be built for
 base_url = "https://clams-blog.surge.sh/"
