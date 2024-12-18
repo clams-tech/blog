@@ -2,7 +2,7 @@
 <!-- Render header only on the homepage -->
 <div class="page">
   <header class="page-header">
-    <a class="link-to-blog" href="/"><span>Back to Blog</span></a>
+    <a class="link-to-blog" href={{ config.base_url }}><span>Back to Blog</span></a>
     <h1 class="post-title">{{ page.title }}</h2>
     <span class="post-date">{{ page.date | date(format="%Y-%m-%d") }}</span>
     {% if page.updated %}
