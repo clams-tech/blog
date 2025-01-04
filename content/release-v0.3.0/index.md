@@ -1,7 +1,9 @@
 +++
-title = "Custom Imports"
-date = 2024-12-21
+title = "Release v0.3.0"
+date = 2025-01-04
 +++
+
+# Custom Imports
 
 Clams connects to many Bitcoin and Lightning wallets automatically. If your wallet isn’t supported yet, you can manually upload your transaction data using the CSV import feature.
 
