@@ -3,7 +3,7 @@ title="Clams Blog"
 description="Personal Finance and Business Analytics for a Bitcoin Standard."
 
 # The URL the site will be built for
-base_url = "https://clams-tech.github.io/blog/"
+base_url = "https://blog.clams.tech/"
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
