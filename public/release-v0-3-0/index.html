@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+    <!-- Enable responsiveness on mobile devices-->
+    <!-- viewport-fit=cover is to support iPhone X rounded corners and notch in landscape-->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover"
+    />
+
+    <title>Clams Blog</title>
+
+    <link rel="icon" type="image/x-icon" href="/favicon.png" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://clams-tech.github.io/blog/style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"
+    />
+
+     
+  </head>
+  
+  <body>
+    <div class="content">
+      
+<!-- Render header only on the homepage -->
+<div class="page">
+  <header class="page-header">
+    <a class="link-to-blog" href=https:&#x2F;&#x2F;clams-tech.github.io&#x2F;blog&#x2F;><span>Back to Blog</span></a>
+    <h1 class="post-title">Release v0.3.0</h2>
+    <span class="post-date">2025-01-04</span>
+    
+  </header>
+  <h1 id="features">Features</h1>
+<ul>
+<li><a href="https://clams-tech.github.io/blog/release-v0-3-0/#custom-imports">Custom Imports</a></li>
+<li><a href="https://clams-tech.github.io/blog/release-v0-3-0/#transaction-details">Transaction Details</a></li>
+<li><a href="https://clams-tech.github.io/blog/release-v0-3-0/#filter-widget-updates">Filter Widget Updates</a></li>
+<li><a href="https://clams-tech.github.io/blog/release-v0-3-0/#cashu-nip60-connection">Cashu NIP60 Connection</a></li>
+</ul>
+<h1 id="custom-imports">Custom Imports</h1>
+<p>We have added a "Import" wallet connection, which allows you to manually import csv transaction data. This is useful for wallets and exchanges that we do not currently support an automatic sync connection.To get started, head to the connections widget and create a new "Import" connection. Once created, click the connection menu button on the right hand side and click "Import".</p>
+<p>To ensure Clams recognizes your transactions, format your CSV file with the correct transaction types, column names, and values. This guide explains the required formats and provides examples for each type.</p>
+<hr />
+<h2 id="transaction-types">Transaction Types</h2>
+<p>Your CSV file must include a <code>type</code> column, and each row must have a value that tells Clams how to process it. Below are the available transaction types, required/optional columns, and examples.</p>
+<hr />
+<h3 id="invoice"><strong>INVOICE</strong></h3>
+<p>A BOLT11 or BOLT12 Lightning invoice where funds are being received to a self-custodial Lightning wallet or node.</p>
+<table><thead><tr><th><strong>Column Name(s)</strong></th><th><strong>Required?</strong></th><th><strong>Value Type</strong></th></tr></thead><tbody>
+<tr><td><code>timestamp</code> or <code>date</code></td><td>required</td><td>Timestamp</td></tr>
+<tr><td><code>amount_btc</code>, <code>amount_sat</code>, or <code>amount_msat</code></td><td>required</td><td>Amount BTC, SAT, or MSAT</td></tr>
+<tr><td><code>id</code> or <code>reference</code></td><td>required</td><td>ID</td></tr>
+<tr><td><code>request</code></td><td>optional</td><td>Invoice Request</td></tr>
+<tr><td><code>zap</code></td><td>optional</td><td>Zap</td></tr>
+</tbody></table>
+<p><strong>Example CSV Snippet</strong>:</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>type,timestamp,amount_btc,id,request,zap
+</span><span>INVOICE,2024-10-04T15:30:45Z,0.01234567,invoice123,lnbc1p3zjth0pp5qqqsyqcyq5rqwzqf...,true
+</span></code></pre>
+<hr />
+<h4 id="pay"><strong>PAY</strong></h4>
+<p>A payment to a BOLT11 or BOLT12 Lightning invoice where funds are being sent from a Lightning wallet or node that is self-custodial.</p>
+<table><thead><tr><th><strong>Valid Column Name(s)</strong></th><th><strong>Required?</strong></th><th><strong>Value Type</strong></th></tr></thead><tbody>
+<tr><td><code>timestamp</code> or <code>date</code></td><td>required</td><td>Timestamp</td></tr>
+<tr><td><code>amount_btc</code>, <code>amount_sat</code>, or <code>amount_msat</code></td><td>required</td><td>Amount BTC, SAT, or MSAT</td></tr>
+<tr><td><code>id</code> or <code>reference</code></td><td>required</td><td>ID</td></tr>
+<tr><td><code>request</code></td><td>optional</td><td>Invoice Request</td></tr>
+<tr><td><code>zap</code></td><td>optional</td><td>Zap</td></tr>
+<tr><td><code>fee_btc</code>, <code>fee_sat</code>, or <code>fee_msat</code></td><td>optional</td><td>Amount BTC, SAT, or MSAT</td></tr>
+</tbody></table>
+<p><strong>Example CSV Snippet</strong>:</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>type,timestamp,amount_btc,id,fee_btc
+</span><span>PAY,2024-10-05T12:00:00Z,0.00567890,payment456,0.00004567
+</span></code></pre>
+<hr />
+<h4 id="deposit"><strong>DEPOSIT</strong></h4>
+<p>A deposit into a custodial wallet. This could involve depositing Bitcoin via Lightning or on-chain, or fiat into an exchange.</p>
+<table><thead><tr><th><strong>Valid Column Name(s)</strong></th><th><strong>Required?</strong></th><th><strong>Value Type</strong></th></tr></thead><tbody>
+<tr><td><code>timestamp</code> or <code>date</code></td><td>required</td><td>Timestamp</td></tr>
+<tr><td><code>amount</code></td><td>required</td><td>Amount BTC or Fiat</td></tr>
+<tr><td><code>id</code> or <code>reference</code></td><td>required</td><td>ID or Lightning Payment Hash</td></tr>
+<tr><td><code>asset</code></td><td>required</td><td>Asset</td></tr>
+<tr><td><code>btc_destination</code></td><td>required if <code>asset</code> is BTC and <code>id</code> is not a valid lightning payment hash</td><td>BTC Destination</td></tr>
+<tr><td><code>fee</code></td><td>optional</td><td>Amount BTC or Fiat</td></tr>
+</tbody></table>
+<p><strong>Example CSV Snippet</strong>:</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>type,timestamp,amount,asset,id
+</span><span>DEPOSIT,2024-10-06T14:25:00Z,500,USD,deposit789
+</span></code></pre>
+<hr />
+<h4 id="withdrawal"><strong>WITHDRAWAL</strong></h4>
+<p>A withdrawal from a custodial wallet. This could involve withdrawing Bitcoin via Lightning or on-chain or withdrawing fiat from an exchange.</p>
+<table><thead><tr><th><strong>Valid Column Name(s)</strong></th><th><strong>Required?</strong></th><th><strong>Value Type</strong></th></tr></thead><tbody>
+<tr><td><code>timestamp</code> or <code>date</code></td><td>required</td><td>Timestamp</td></tr>
+<tr><td><code>amount</code></td><td>required</td><td>Amount BTC or Fiat</td></tr>
+<tr><td><code>id</code> or <code>reference</code></td><td>required</td><td>ID or Lightning Payment Hash</td></tr>
+<tr><td><code>asset</code></td><td>required</td><td>Asset</td></tr>
+<tr><td><code>btc_destination</code></td><td>required if <code>asset</code> is BTC and <code>id</code> is not a valid lightning payment hash</td><td>BTC Destination</td></tr>
+<tr><td><code>fee</code></td><td>optional</td><td>Amount BTC or Fiat</td></tr>
+</tbody></table>
+<p><strong>Example CSV Snippet</strong>:</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>type,timestamp,amount,asset,id,btc_destination
+</span><span>WITHDRAWAL,2024-10-07T16:45:00Z,0.5,BTC,withdrawal101,bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh
+</span></code></pre>
+<hr />
+<h4 id="trade"><strong>TRADE</strong></h4>
+<p>A trade from one asset to another. This could involve buying or selling Bitcoin for fiat.</p>
+<table><thead><tr><th><strong>Valid Column Name(s)</strong></th><th><strong>Required?</strong></th><th><strong>Value Type</strong></th></tr></thead><tbody>
+<tr><td><code>timestamp</code> or <code>date</code></td><td>required</td><td>Timestamp</td></tr>
+<tr><td><code>from_amount</code></td><td>required</td><td>Amount BTC or Fiat</td></tr>
+<tr><td><code>to_amount</code></td><td>required</td><td>Amount BTC or Fiat</td></tr>
+<tr><td><code>fee_amount</code></td><td>optional</td><td>Amount BTC or Fiat</td></tr>
+<tr><td><code>id</code> or <code>reference</code></td><td>required</td><td>ID</td></tr>
+<tr><td><code>from_asset</code></td><td>required</td><td>Asset</td></tr>
+<tr><td><code>to_asset</code></td><td>required</td><td>Asset</td></tr>
+<tr><td><code>fee_asset</code></td><td>optional</td><td>Asset</td></tr>
+<tr><td><code>trade_id</code></td><td>optional</td><td>ID</td></tr>
+<tr><td><code>order_id</code></td><td>optional</td><td>ID</td></tr>
+</tbody></table>
+<p><strong>Example CSV Snippet</strong>:</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>type,timestamp,from_amount,from_asset,to_amount,to_asset,fee_amount,fee_asset
+</span><span>TRADE,2024-10-08T18:00:00Z,0.1,BTC,3000,USD,5,USD
+</span></code></pre>
+<hr />
+<h3 id="value-types">Value Types</h3>
+<h4 id="timestamp"><strong>Timestamp</strong></h4>
+<p>All timestamps need to be in UTC timezone and follow a valid RFC 3339 format, unix timestamp in seconds, or one of the custom formats below:
+Examples:</p>
+<ul>
+<li>2024-10-04T15:30:45Z</li>
+<li>2024-10-04T15:30:45+00:00</li>
+<li>2024-10-04T15:30:45.123Z</li>
+<li>2024-10-04T15:30:45.123456Z</li>
+<li>1728055845.123</li>
+<li>2024-10-04T00:00:00Z</li>
+<li>04/10/2024 5:07:59 AM</li>
+</ul>
+<hr />
+<h4 id="id"><strong>ID</strong></h4>
+<p>A unique ID for this transaction. This can be any value as long as it is unique to the transaction and wallet. Examples:</p>
+<ul>
+<li>invoice123</li>
+<li>trade789</li>
+</ul>
+<hr />
+<h4 id="amount-btc"><strong>Amount BTC</strong></h4>
+<p>Bitcoin denominated amount with up to 8 decimal places. Examples:</p>
+<ul>
+<li>0.13850031</li>
+<li>1.000045</li>
+<li>0.00000001</li>
+</ul>
+<hr />
+<h4 id="amount-sat"><strong>Amount SAT</strong></h4>
+<p>SATS denominated Bitcoin amount. Examples:</p>
+<ul>
+<li>400</li>
+<li>234</li>
+</ul>
+<hr />
+<h4 id="amount-fiat"><strong>Amount Fiat</strong></h4>
+<p>Fiat amount as a decimal. Examples:</p>
+<ul>
+<li>4.32</li>
+<li>9589.47</li>
+</ul>
+<hr />
+<h4 id="invoice-request"><strong>Invoice Request</strong></h4>
+<p>A BOLT11 or BOLT12 Lightning invoice request. Example:</p>
+<ul>
+<li>lnbc1p3zjth0pp5qqqsyqcyq5rqwzqfqqqsyqcyq5rqwzqfqqqsyqcyq5rqwzqfqypqdpl2pkx2ctnv5sxxmmwwd5kgetjypeh2ursdae8gxqyjw5qcqpjrzjqwfn3p9278ttzzpe0e00uhyxhned3j5d9acqak5emwfpflp8zqpsp5lraer6xyeztnadn8m3rpppr5v2zx3l2r7t70rdjlxe2qup2n7tzs9qyyssqapu4gv3h9y8q2ds73xge4pxx5vet4nvavhxk4gs05vjcl2jr5jzr3zoxw4zaxz7rl6rs2lc3g2yxlqfpk8n6k5jfj9z4xr6z9l6wjlhrxqpl66lrm</li>
+</ul>
+<hr />
+<h4 id="btc-destination"><strong>BTC Destination</strong></h4>
+<p>An on-chain address, BOLT11 invoice, or BOLT12 invoice. Examples:</p>
+<ul>
+<li>bc1qweq8vxpsvx3d89uvp65qgwjql68s4e43csgtvf</li>
+<li>lnbc1p3zjth0pp...</li>
+</ul>
+<hr />
+<h4 id="zap"><strong>Zap</strong></h4>
+<p>Boolean indicating if this is a NOSTR zap. Examples:</p>
+<ul>
+<li>true</li>
+<li>false</li>
+</ul>
+<hr />
+<h4 id="asset"><strong>Asset</strong></h4>
+<p>The asset being transacted. Examples:</p>
+<ul>
+<li>BTC</li>
+<li>USD</li>
+<li>EUR</li>
+<li>GBP</li>
+<li>CNY</li>
+<li>JPY</li>
+<li>CAD</li>
+<li>AUD</li>
+<li>HKD</li>
+<li>SGD</li>
+<li>SEK</li>
+<li>CHF</li>
+<li>THB</li>
+<li>PLN</li>
+<li>NOK</li>
+<li>MYR</li>
+<li>DKK</li>
+<li>ZAR</li>
+<li>NZD</li>
+<li>MXN</li>
+<li>RUB</li>
+</ul>
+<hr />
+<h3 id="checklist-before-uploading">Checklist Before Uploading</h3>
+<ul>
+<li><input disabled="" type="checkbox"/>
+File includes a <code>type</code> column with valid transaction types.</li>
+<li><input disabled="" type="checkbox"/>
+All required columns for each type are filled.</li>
+<li><input disabled="" type="checkbox"/>
+Timestamps follow UTC and a supported format.</li>
+<li><input disabled="" type="checkbox"/>
+Values are correctly formatted (e.g., BTC amounts, SATs, or fiat).</li>
+</ul>
+<p>If your file meets these requirements, you’re ready to upload it to Clams.</p>
+<h1 id="transaction-details">Transaction Details</h1>
+<p>Click on a transaction row in the transactions widget to display it's details:
+<img src="https://clams-tech.github.io/blog/release-v0-3-0/./images/transaction-details.png" alt="Transaction details modal" /></p>
+<h2 id="general-details">General Details</h2>
+<p>Included are general details like the date and time, connection and id (hash/txid) that are associated with the transaction for cross referencing to the full details in your wallet.</p>
+<h2 id="exclude">Exclude</h2>
+<p>You can switch the toggle to exclude this transaction from any of the calculations displayed in the widgets. This can be useful if you might have been temporarily custodying funds for a friend or family, and it is not really related to your transaction activity.</p>
+<h2 id="tags">Tags</h2>
+<p>Tags are a way of categorizing transactions so that you can easily filter and quickly recognize them. Clams will try to add intelligent default tags when possible. The tags section allows for adding and removing tags to a particular transaction, as well as managing tags in general by creating new ones or deleting existing ones. Tag filtering has also been added to the filters widget for filtering to particular tags.</p>
+<h2 id="note">Note</h2>
+<p>You can add a text note for a transaction to provide additional context that might not be covered by tags and accounts.</p>
+<h2 id="balance-changes-and-cost-basis">Balance Changes and Cost Basis</h2>
+<p>This section will give a summary that is similar to the Fiat widget, but at a per transaction level. You can see the balance changes in sats, the cost basis, the current value in fiat and the exchange rate at the time of the transaction.</p>
+<h2 id="entries-and-custom-accounts">Entries and Custom Accounts</h2>
+<p>This section shows how the transaction is represented in double entry accounting journal entries with debits and credits and the accounts affected. You can think of accounts as being like a category. All credits and debits must go in to at least one of the top level accounts: Income, Expenses, Assets, Liabilities and Equity. Clams will automatically do this for you at the most granular level it can. The entries section allows you customise the account for each debit/credit to further categorize them. You cannot change the top level account (eg change income to expense), but you can create new sub accounts and select them to make them more specific. For example a transaction might be in the "Income" account. You might want to create a sub account called "Day Job" and select that which will then indicate that income came from your day job, whereas a zap transaction you might add a sub account "Nostr" indicating that income was derived from Nostr. For an Expense, maybe you create a sub account called "Rent" which indicates this transaction was paying your rent. Or maybe a new sub category like "Payroll" etc.
+By adding more specific accounts and categorizing your credits and debits, this allows you to use the filters to answer questions like "How much did I spend on food in the last month?". Or "what was our payroll for the last quarter?",</p>
+<h1 id="filter-widget-updates">Filter Widget Updates</h1>
+<p>There is a new section that allows for filtering by tags which is extra useful if you have added tags to your transactions or to make use of the default tags that Clams automatically adds for you.
+It is also now possible to select multiple items in the dropdown to allow filtering for multiple accounts or tags.</p>
+<h1 id="cashu-nip60-connection">Cashu NIP60 Connection</h1>
+<p>We built this connection whilst participating in the btc++ Ecash conference hackathon in Berlin last year and decided to go ahead and release it for anyone who is on the bleeding edge of Ecash and Nostr. NIP60 is a standard for having a Cashu Ecash wallet where the Ecash is stored on Nostr relays, makling a user balance accessible in any Nostr app.</p>
+
+ 
+</div>
+
+    </div>
+  </body>
+  <footer class="footer">
+    <div id="mc_embed_shell">
+      <link
+        href="//cdn-images.mailchimp.com/embedcode/classic-061523.css"
+        rel="stylesheet"
+        type="text/css"
+      />
+      <style type="text/css">
+        #mc_embed_signup{false;clear:left; font:14px Helvetica,Arial,sans-serif; max-width: 500px;}
+        /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+           We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+      </style>
+      <div class="form" id="mc_embed_signup">
+        <form
+          action="https://tech.us14.list-manage.com/subscribe/post?u=f8a848454e4e2bfaf4577f68f&amp;id=efb2bbd0c2&amp;f_id=000684e0f0"
+          method="post"
+          id="mc-embedded-subscribe-form"
+          name="mc-embedded-subscribe-form"
+          class="validate"
+          target="_blank"
+        >
+          <div class="responses" id="mce-responses">
+            <div
+              class="response"
+              id="mce-error-response"
+              style="display: none"
+            ></div>
+            <div
+              class="response"
+              id="mce-success-response"
+              style="display: none"
+            ></div>
+          </div>
+          <div id="mc_embed_signup_scroll">
+            <div class="mc-field-group">
+              <div class="input-container">
+                <input
+                  type="email"
+                  name="EMAIL"
+                  class="required email"
+                  id="mce-EMAIL"
+                  placeholder="Email Address"
+                />
+                <button
+                  type="submit"
+                  name="subscribe"
+                  id="mc-embedded-subscribe"
+                >
+                  Subscribe
+                </button>
+              </div>
+            </div>
+
+            <div aria-hidden="true" style="position: absolute; left: -5000px">
+              /* real people should not fill this in and expect good things - do
+              not remove this or risk form bot signups */
+              <input
+                type="text"
+                name="b_f8a848454e4e2bfaf4577f68f_efb2bbd0c2"
+                tabindex="-1"
+                value=""
+              />
+            </div>
+          </div>
+        </form>
+      </div>
+      <script
+        type="text/javascript"
+        src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"
+      ></script>
+      <script type="text/javascript">
+        (function ($) {
+          window.fnames = new Array();
+          window.ftypes = new Array();
+          fnames[0] = "EMAIL";
+          ftypes[0] = "email";
+        })(jQuery);
+        var $mcj = jQuery.noConflict(true);
+      </script>
+    </div>
+    <div class="socials">
+      <a href="https://clams.tech" target="_blank" rel="noopener noreferrer"
+        >About</a
+      >
+      <a
+        href="https://clams.tech/downloads"
+        target="_blank"
+        rel="noopener noreferrer"
+        >App</a
+      >
+      <a
+        href="https://discord.gg/eWfHuJZVaB"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Discord</a
+      >
+      <a
+        href="https://nostr.at/npub136hk9wu6xnrz64kfaapsvgc5rfnylz4djlx4w30w66h6cy48vhws3gth6q"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Nostr</a
+      >
+      <a
+        href="https://x.com/clamstech"
+        target="_blank"
+        rel="noopener noreferrer"
+        >X</a
+      >
+    </div>
+  </footer>
+</html>

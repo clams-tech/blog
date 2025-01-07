@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+Allow: /
+Sitemap: https://clams-tech.github.io/blog/sitemap.xml
