@@ -3,9 +3,16 @@ title = "Release v0.3.0"
 date = 2025-01-04
 +++
 
+# Features
+
+- [Custom Imports](#custom-imports)
+- [Transaction Details](#transaction-details)
+- [Filter Widget Updates](#filter-widget-updates)
+- [Cashu NIP60 Connection](#cashu-nip60-connection)
+
 # Custom Imports
 
-Clams connects to many Bitcoin and Lightning wallets automatically. If your wallet isn’t supported yet, you can manually upload your transaction data using the CSV import feature.
+We have added a "Import" wallet connection, which allows you to manually import csv transaction data. This is useful for wallets and exchanges that we do not currently support an automatic sync connection.To get started, head to the connections widget and create a new "Import" connection. Once created, click the connection menu button on the right hand side and click "Import".
 
 To ensure Clams recognizes your transactions, format your CSV file with the correct transaction types, column names, and values. This guide explains the required formats and provides examples for each type.
 
@@ -246,3 +253,42 @@ The asset being transacted. Examples:
 - [ ] Values are correctly formatted (e.g., BTC amounts, SATs, or fiat).
 
 If your file meets these requirements, you’re ready to upload it to Clams.
+
+# Transaction Details
+
+Click on a transaction row in the transactions widget to display it's details:
+![Transaction details modal](./images/transaction-details.png)
+
+## General Details
+
+Included are general details like the date and time, connection and id (hash/txid) that are associated with the transaction for cross referencing to the full details in your wallet.
+
+## Exclude
+
+You can switch the toggle to exclude this transaction from any of the calculations displayed in the widgets. This can be useful if you might have been temporarily custodying funds for a friend or family, and it is not really related to your transaction activity.
+
+## Tags
+
+Tags are a way of categorizing transactions so that you can easily filter and quickly recognize them. Clams will try to add intelligent default tags when possible. The tags section allows for adding and removing tags to a particular transaction, as well as managing tags in general by creating new ones or deleting existing ones. Tag filtering has also been added to the filters widget for filtering to particular tags.
+
+## Note
+
+You can add a text note for a transaction to provide additional context that might not be covered by tags and accounts.
+
+## Balance Changes and Cost Basis
+
+This section will give a summary that is similar to the Fiat widget, but at a per transaction level. You can see the balance changes in sats, the cost basis, the current value in fiat and the exchange rate at the time of the transaction.
+
+## Entries and Custom Accounts
+
+This section shows how the transaction is represented in double entry accounting journal entries with debits and credits and the accounts affected. You can think of accounts as being like a category. All credits and debits must go in to at least one of the top level accounts: Income, Expenses, Assets, Liabilities and Equity. Clams will automatically do this for you at the most granular level it can. The entries section allows you customise the account for each debit/credit to further categorize them. You cannot change the top level account (eg change income to expense), but you can create new sub accounts and select them to make them more specific. For example a transaction might be in the "Income" account. You might want to create a sub account called "Day Job" and select that which will then indicate that income came from your day job, whereas a zap transaction you might add a sub account "Nostr" indicating that income was derived from Nostr. For an Expense, maybe you create a sub account called "Rent" which indicates this transaction was paying your rent. Or maybe a new sub category like "Payroll" etc.
+By adding more specific accounts and categorizing your credits and debits, this allows you to use the filters to answer questions like "How much did I spend on food in the last month?". Or "what was our payroll for the last quarter?",
+
+# Filter Widget Updates
+
+There is a new section that allows for filtering by tags which is extra useful if you have added tags to your transactions or to make use of the default tags that Clams automatically adds for you.
+It is also now possible to select multiple items in the dropdown to allow filtering for multiple accounts or tags.
+
+# Cashu NIP60 Connection
+
+We built this connection whilst participating in the btc++ Ecash conference hackathon in Berlin last year and decided to go ahead and release it for anyone who is on the bleeding edge of Ecash and Nostr. NIP60 is a standard for having a Cashu Ecash wallet where the Ecash is stored on Nostr relays, makling a user balance accessible in any Nostr app.
