@@ -7,6 +7,7 @@ date = 2025-01-04
 
 - [Custom Imports](#custom-imports)
 - [Transaction Details](#transaction-details)
+- [DB Backup and Restore](#db-backup-and-restore)
 - [Filter Widget Updates](#filter-widget-updates)
 - [Cashu NIP60 Connection](#cashu-nip60-connection)
 
@@ -283,6 +284,10 @@ This section will give a summary that is similar to the Fiat widget, but at a pe
 
 This section shows how the transaction is represented in double entry accounting journal entries with debits and credits and the accounts affected. You can think of accounts as being like a category. All credits and debits must go in to at least one of the top level accounts: Income, Expenses, Assets, Liabilities and Equity. Clams will automatically do this for you at the most granular level it can. The entries section allows you customise the account for each debit/credit to further categorize them. You cannot change the top level account (eg change income to expense), but you can create new sub accounts and select them to make them more specific. For example a transaction might be in the "Income" account. You might want to create a sub account called "Day Job" and select that which will then indicate that income came from your day job, whereas a zap transaction you might add a sub account "Nostr" indicating that income was derived from Nostr. For an Expense, maybe you create a sub account called "Rent" which indicates this transaction was paying your rent. Or maybe a new sub category like "Payroll" etc.
 By adding more specific accounts and categorizing your credits and debits, this allows you to use the filters to answer questions like "How much did I spend on food in the last month?". Or "what was our payroll for the last quarter?",
+
+# DB Backup and Restore
+
+Now that you can manually import data and add custom metadata via tags, custom accounts and notes, it is important to be able to back up your data. There are a couple of additions to the settings modal (click the wrench at the bottom right to open) that will allow you to backup and restore your data. Click the "Backup data" button to take a snapshot of your data. It will be saved to the data directory for the Clams app. Doing this regularly, especially after adding new connections or data is good practice. If you ever mess something up and want to go back to a previous snapshot, then click the "Restore from backup" button. This will display all of your data snapshots (and the location if you want to copy and store on a separate hard drive for redundancy) and you will notice the filename includes the date and a timestamp. Select the DB file that you would like to load and Clams will then run on the selected DB file. For safety Clams will also keep a copy of your current data snapshot just in case you do want to go back to that state.
 
 # Filter Widget Updates
 
