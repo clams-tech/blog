@@ -13,6 +13,10 @@ date = 2025-01-04
 
 # Custom Imports
 
+<div class="responsive-video">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/NXsq-qfSL4s?si=5OWDkLjmRaEmxqm2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
 We have added a "Import" wallet connection, which allows you to manually import csv transaction data. This is useful for wallets and exchanges that we do not currently support an automatic sync connection.To get started, head to the connections widget and create a new "Import" connection. Once created, click the connection menu button on the right hand side and click "Import".
 
 To ensure Clams recognizes your transactions, format your CSV file with the correct transaction types, column names, and values. This guide explains the required formats and provides examples for each type.
@@ -257,6 +261,10 @@ If your file meets these requirements, you’re ready to upload it to Clams.
 
 # Transaction Details
 
+<div class="responsive-video">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/juClH0oKiDU?si=FHA3MJUBWAmiHoVx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
 Click on a transaction row in the transactions widget to display it's details:
 ![Transaction details modal](./images/transaction-details.png)
 
@@ -287,13 +295,25 @@ By adding more specific accounts and categorizing your credits and debits, this 
 
 # DB Backup and Restore
 
+<div class="responsive-video">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/yZALFOBYinM?si=erJpmdTFIotz9W51" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
 Now that you can manually import data and add custom metadata via tags, custom accounts and notes, it is important to be able to back up your data. There are a couple of additions to the settings modal (click the wrench at the bottom right to open) that will allow you to backup and restore your data. Click the "Backup data" button to take a snapshot of your data. It will be saved to the data directory for the Clams app. Doing this regularly, especially after adding new connections or data is good practice. If you ever mess something up and want to go back to a previous snapshot, then click the "Restore from backup" button. This will display all of your data snapshots (and the location if you want to copy and store on a separate hard drive for redundancy) and you will notice the filename includes the date and a timestamp. Select the DB file that you would like to load and Clams will then run on the selected DB file. For safety Clams will also keep a copy of your current data snapshot just in case you do want to go back to that state.
 
 # Filter Widget Updates
+
+<div class="responsive-video">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Z1_HMG9FQ7M?si=cVTOzai8oP5APqzK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
 
 There is a new section that allows for filtering by tags which is extra useful if you have added tags to your transactions or to make use of the default tags that Clams automatically adds for you.
 It is also now possible to select multiple items in the dropdown to allow filtering for multiple accounts or tags.
 
 # Cashu NIP60 Connection
+
+<div class="responsive-video">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/M9_2DA1tUSs?si=LHCutnS6Z8RHQMuN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
 
 We built this connection whilst participating in the btc++ Ecash conference hackathon in Berlin last year and decided to go ahead and release it for anyone who is on the bleeding edge of Ecash and Nostr. NIP60 is a standard for having a Cashu Ecash wallet where the Ecash is stored on Nostr relays, makling a user balance accessible in any Nostr app.
