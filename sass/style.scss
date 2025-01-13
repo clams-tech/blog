@@ -218,6 +218,8 @@ tbody tr:nth-child(odd) th {
 
   p {
     margin-bottom: 0.25em;
+    max-width: 400px;
+    text-align: center;
   }
 }
 
@@ -268,7 +270,7 @@ tbody tr:nth-child(odd) th {
   }
 }
 
- .posts,.page {
+ .posts, .features, .page {
   max-width: 800px;
   margin: 0 auto;
 }
@@ -277,6 +279,21 @@ tbody tr:nth-child(odd) th {
   margin: 1em 0;
   .post-date {
     font-size: small;
+  }
+}
+
+.features {
+  margin-top: 5em;
+
+  .feature-list {
+    padding: 0;
+    margin: 0;
+    margin-top: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem; /* Space between items */
+    list-style: none; /* Remove bullets */
+    font-weight: bold;
   }
 }
 

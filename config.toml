@@ -24,3 +24,10 @@ sidebar_reverse = false
 sidebar_links = [
     {url = "https://clams.tech", name = "clams.tech"},
 ]
+features = [
+    {title = "Custom Imports", link = "/release-v0-3-0/#custom-imports"},
+    {title = "Transaction Details", link = "/release-v0-3-0/#transaction-details"},
+    {title = "DB Backup and Restore", link = "/release-v0-3-0/#db-backup-and-restore"},
+    {title = "Filter Widget", link = "/release-v0-3-0/#filter-widget-updates"},
+    {title = "Cashu NIP60 Connection", link = "/release-v0-3-0/#cashu-nip60-connection"},
+]
