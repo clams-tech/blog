@@ -34,14 +34,14 @@
   <!-- Render header only on the homepage -->
   <header class="header">
     <h1>Clams Blog</h1>
-    <p>Personal Finance and Business Analytics</p>
-    <p>for a Bitcoin Standard.</p>
+    <p>Personal Finance and Business Analytics for a Bitcoin Standard.</p>
   </header>
   {% endif %}
   <body>
     <div class="content">
       {% block content %}
       <div class="posts">
+        <h3>Posts</h3>
         {% for page in section.pages | reverse %}
         <div class="post">
           <span class="post-date">
@@ -52,6 +52,16 @@
           </h3>
         </div>
         {% endfor %}
+      </div>
+      <div class="features">
+        <h3>Features</h3>
+        <ul class="feature-list">
+          {% for feature in config.extra.features %}
+          <li class="feature-item">
+            <a href="{{ feature.link }}">{{ feature.title }}</a>
+          </li>
+          {% endfor %}
+        </ul>
       </div>
       {% endblock content %}
     </div>
