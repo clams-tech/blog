@@ -17,7 +17,7 @@ date = 2025-01-04
 <iframe width="560" height="315" src="https://www.youtube.com/embed/NXsq-qfSL4s?si=5OWDkLjmRaEmxqm2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 
-We have added a "Import" wallet connection, which allows you to manually import csv transaction data. This is useful for wallets and exchanges that we do not currently support an automatic sync connection.To get started, head to the connections widget and create a new "Import" connection. Once created, click the connection menu button on the right hand side and click "Import".
+We have added a "Import" wallet connection, which allows you to manually import csv transaction data. This is useful for wallets and exchanges that we do not currently support an automatic sync connection. To get started, head to the connections widget and create a new "Import" connection. Once created, click the connection menu button on the right hand side and click "Import".
 
 To ensure Clams recognizes your transactions, format your CSV file with the correct transaction types, column names, and values. This guide explains the required formats and provides examples for each type.
 
