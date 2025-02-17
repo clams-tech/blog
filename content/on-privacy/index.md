@@ -3,7 +3,7 @@ title = "On Privacy"
 date = 2025-02-17
 +++
 
-### Our Commitment to Privacy
+#### Our Commitment to Privacy
 
 We are not interested in tracking users. We don’t use Google scripts or any other tracking software. Unlike other apps that offer accounting-like services, we do not host your data on our servers. All of your data remains on your device. We have no idea how many transactions you’ve made, what your balances are, where you reside, or even what your email address is. You just <a href="https://clams.tech/downloads" target="_blank" rel="noopener noreferrer">download Clams</a> and connect your wallets—we do not need to know anything about you.
 
