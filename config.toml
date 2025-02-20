@@ -32,4 +32,6 @@ features = [
     {title = "Cashu NIP60 Connection", link = "/release-v0-3-0/#cashu-nip60-connection"},
     {title = "Exports Widget", link = "/release-v0-4/#exports-widget"},
     {title = "V4V Modal", link = "/release-v0-4/#v4v-modal"},
+    {title = "XPub Connection", link = "/release-v0-2/#xpub-connection"},
+    {title = "Descriptor Connection", link = "/release-v0-2/#descriptor-connection"},
 ]
