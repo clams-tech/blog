@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+    <!-- Enable responsiveness on mobile devices-->
+    <!-- viewport-fit=cover is to support iPhone X rounded corners and notch in landscape-->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover"
+    />
+
+    <title>Clams Blog</title>
+
+    <link rel="icon" type="image/x-icon" href="/favicon.png" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://blog.clams.tech/style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"
+    />
+
+     
+  </head>
+  
+  <body>
+    <div class="content">
+      
+<!-- Render header only on the homepage -->
+<div class="page">
+  <header class="page-header">
+    <a class="link-to-blog" href=https:&#x2F;&#x2F;blog.clams.tech&#x2F;><span>Back to Blog</span></a>
+    <h1 class="post-title">Release v0.2</h2>
+    <span class="post-date">2024-08-27</span>
+    
+  </header>
+  <h1 id="features">Features</h1>
+<ul>
+<li><a href="https://blog.clams.tech/release-v0-2/#xpub-connection">XPub Connection</a></li>
+<li><a href="https://blog.clams.tech/release-v0-2/#descriptor-connection">Descriptor Connection</a></li>
+</ul>
+<hr />
+<h2 id="xpub-connection">XPub Connection</h2>
+<div class="responsive-video">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/7Uh78IrUQks?si=-omsfjIS6eWGdSrW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+<p>Import your xpub, ypub, or zpub from your wallet and select the address types to scan for transactions.</p>
+<hr />
+<h2 id="descriptor-connection">Descriptor Connection</h2>
+<div class="responsive-video">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/7JRPx-Nf4Hk?si=NxL042Osvvz5abm5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+<p>Descriptor wallets provide a simple way to describe complex script conditions like multisig wallets.</p>
+<p><strong>Privacy Note:</strong><br />
+When fetching transactions for each address, we randomly select an Esplora instance from a list of public instances. For added privacy, use a VPN while syncing. In the future, you'll be able to define your own list of trusted instances (e.g., self-hosted).</p>
+<hr />
+<h3 id="also-included">Also Included</h3>
+<p>In this release, we've made several improvements:</p>
+<ul>
+<li>Migrated to Tauri V2 for a more robust native app experience, enhanced performance, and lower resource usage.</li>
+<li>Optimized SQLite DB tables for faster widget load times.</li>
+<li>Ported more JavaScript code to Rust for better performance.</li>
+</ul>
+<p>We’ve also added a new Fiat Widget with the following features:</p>
+<ul>
+<li>Detailed cost basis calculations.</li>
+<li>Profit/loss tracking using the FIFO algorithm.</li>
+<li>More algorithms coming soon!</li>
+</ul>
+<p><strong>UI/UX Enhancements:</strong></p>
+<ul>
+<li>New Filters widget for streamlined global filtering.</li>
+<li>Preset date range buttons for quick analysis.</li>
+<li>Balances widget now includes fiat values.</li>
+</ul>
+<hr />
+
+ 
+</div>
+
+    </div>
+  </body>
+  <footer class="footer">
+    <div id="mc_embed_shell">
+      <link
+        href="//cdn-images.mailchimp.com/embedcode/classic-061523.css"
+        rel="stylesheet"
+        type="text/css"
+      />
+      <style type="text/css">
+        #mc_embed_signup{false;clear:left; font:14px Helvetica,Arial,sans-serif; max-width: 500px;}
+        /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+           We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+      </style>
+      <div class="form" id="mc_embed_signup">
+        <form
+          action="https://tech.us14.list-manage.com/subscribe/post?u=f8a848454e4e2bfaf4577f68f&amp;id=efb2bbd0c2&amp;f_id=000684e0f0"
+          method="post"
+          id="mc-embedded-subscribe-form"
+          name="mc-embedded-subscribe-form"
+          class="validate"
+          target="_blank"
+        >
+          <div class="responses" id="mce-responses">
+            <div
+              class="response"
+              id="mce-error-response"
+              style="display: none"
+            ></div>
+            <div
+              class="response"
+              id="mce-success-response"
+              style="display: none"
+            ></div>
+          </div>
+          <div id="mc_embed_signup_scroll">
+            <div class="mc-field-group">
+              <div class="input-container">
+                <input
+                  type="email"
+                  name="EMAIL"
+                  class="required email"
+                  id="mce-EMAIL"
+                  placeholder="Email Address"
+                />
+                <button
+                  type="submit"
+                  name="subscribe"
+                  id="mc-embedded-subscribe"
+                >
+                  Subscribe
+                </button>
+              </div>
+            </div>
+
+            <div aria-hidden="true" style="position: absolute; left: -5000px">
+              /* real people should not fill this in and expect good things - do
+              not remove this or risk form bot signups */
+              <input
+                type="text"
+                name="b_f8a848454e4e2bfaf4577f68f_efb2bbd0c2"
+                tabindex="-1"
+                value=""
+              />
+            </div>
+          </div>
+        </form>
+      </div>
+      <script
+        type="text/javascript"
+        src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"
+      ></script>
+      <script type="text/javascript">
+        (function ($) {
+          window.fnames = new Array();
+          window.ftypes = new Array();
+          fnames[0] = "EMAIL";
+          ftypes[0] = "email";
+        })(jQuery);
+        var $mcj = jQuery.noConflict(true);
+      </script>
+    </div>
+    <div class="socials">
+      <a href="https://clams.tech" target="_blank" rel="noopener noreferrer"
+        >About</a
+      >
+      <a
+        href="https://clams.tech/downloads"
+        target="_blank"
+        rel="noopener noreferrer"
+        >App</a
+      >
+      <a
+        href="https://discord.gg/eWfHuJZVaB"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Discord</a
+      >
+      <a
+        href="https://nostr.at/npub136hk9wu6xnrz64kfaapsvgc5rfnylz4djlx4w30w66h6cy48vhws3gth6q"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Nostr</a
+      >
+      <a
+        href="https://x.com/clamstech"
+        target="_blank"
+        rel="noopener noreferrer"
+        >X</a
+      >
+    </div>
+  </footer>
+</html>
