@@ -1,10 +1,9 @@
-# The URL the site will be built for
-# The base URL of the site; the only required configuration variable.
-base_url = "example.com"
+title = "Clams Blog"
 
-# The site title and description; used in feeds by default.
-title = "🪩 Zola + Tailwind CSS: because they deserve to be together 💅"
-description = "A GitHub template for making projects with the Zola static site generator + Tailwind CSS: 🪜 + 🎨"
+description = "Personal Finance and Business Analytics for a Bitcoin Standard."
+
+# The URL the site will be built for
+base_url = "https://clams-blog-v2.surge.sh"
 
 # The default language; used in feeds.
 default_language = "en"
@@ -161,18 +160,31 @@ index_format = "elasticlunr_javascript"
 #    {name = "tags"},
 # ]
 # build_search_index = false
+# generate_feed = true
+# taxonomies = [
+#    {name = "auteurs"},
+#    {name = "tags"},
+# ]
+# build_search_index = false
 
-# You can put any kind of data here. The data
-# will be accessible in all templates
-# Example:
-#     [extra]
-#     author = "Famous author"
-#
-# author value will be available using {{ config.extra.author }} in templates
-#
 [extra]
-project_gh = "https://github.com/asimpletune/zola-tailwindcss"
+# Social URLs
+discord_url = "https://discord.gg/eWfHuJZVaB"
+github_url = "https://github.com/clams-tech"
+x_url = "https://twitter.com/clamstech"
+nostr_url = "https://nostr.at/npub136hk9wu6xnrz64kfaapsvgc5rfnylz4djlx4w30w66h6cy48vhws3gth6q"
+docs_url = "https://docs.clams.tech/"
 
-[extra.author]
-name = "Spence"
-website = "https://spenc.es"
+
+# Features list
+features = [
+    { title = "Custom Imports", link = "/release-v0-3-0/#custom-imports" },
+    { title = "Transaction Details", link = "/release-v0-3-0/#transaction-details" },
+    { title = "DB Backup and Restore", link = "/release-v0-3-0/#db-backup-and-restore" },
+    { title = "Filter Widget", link = "/release-v0-3-0/#filter-widget-updates" },
+    { title = "Cashu NIP60 Connection", link = "/release-v0-3-0/#cashu-nip60-connection" },
+    { title = "Exports Widget", link = "/release-v0-4/#exports-widget" },
+    { title = "V4V Modal", link = "/release-v0-4/#v4v-modal" },
+    { title = "XPub Connection", link = "/release-v0-2/#xpub-connection" },
+    { title = "Descriptor Connection", link = "/release-v0-2/#descriptor-connection" },
+]

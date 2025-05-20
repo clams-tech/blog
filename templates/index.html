@@ -1,81 +1,89 @@
-<!DOCTYPE html>
-<html lang="{{ lang }}">
+{% extends "base.html" %} {% block title %}{{ config.title }}{% endblock title
+%} {% block description %}{{ config.description }}{% endblock description %} {%
+block content %}
+<div class="max-w-3xl mx-auto">
+    <section class="mb-12">
+        <img class="m-auto w-64" src="/clams-logo.svg" alt="Logo" />
+        {% if section.description %}
+        <p class="text-center mt-4 text-lg">{{ section.description }}</p>
+        {% endif %} {% if section.content %}
+        <div class="mt-6 prose max-w-none">{{ section.content | safe }}</div>
+        {% endif %}
+    </section>
 
-<head>
+    <section>
+        <h2 class="text-2xl font-bold mb-6">Recent Posts</h2>
 
-  <!-- HTML Meta Tags -->
-  <title>{{ section.title }}</title>
-  <meta name="description" content="{{ section.description }}">
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <div class="grid gap-8">
+            {% for page in section.pages | sort(attribute="date") | reverse %}
+            <article
+                class="bg-white p-6 rounded-lg border border-[#212420]/20 hover:shadow-md transition-shadow"
+            >
+                <h3 class="text-xl font-bold mb-2">
+                    <a
+                        href="{{ page.permalink }}"
+                        class="hover:text-[#212420]/80"
+                        >{{ page.title }}</a
+                    >
+                </h3>
 
-  {# Main CSS styling goes here, which is output by Tailwind #}
-  <link rel="stylesheet" type="text/css" href="/style.css">
+                <div class="text-sm text-[#212420]/70 mb-3">
+                    <time datetime="{{ page.date }}"
+                        >{{ page.date | date(format="%B %e, %Y") }}</time
+                    >
+                </div>
 
-  {# These tags are for the previews that are generated when the website is shared, e.g. on iMessage, WhatsApp, twitter, etc... #}
-  <!-- Facebook Meta Tags -->
-  <meta property="og:url" content="{{ config.base_url }}">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="{{ section.title }}">
-  <meta property=" og:description" content="{{ section.description }}">
-  <meta property="og:image" content="/social_preview.jpg">
+                {% if page.description %}
+                <p class="text-[#212420]/80 line-clamp-1">
+                    {{ page.description }}
+                </p>
 
-  <!-- Twitter Meta Tags -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta property="twitter:domain" content="zola-tailwind.spence.es">
-  <meta property="twitter:url" content="{{ config.base_url }}">
-  <meta name="twitter:title" content="{{ section.title }}">
-  <meta name="twitter:description" content="{{ section.description }}">
-  <meta name="twitter:image" content="/social_preview.jpg">
+                {% endif %}
 
-  <!-- e.g. for safari tab bar -->
-  <meta name="theme-color" content="#10182B" />
+                <a
+                    href="{{ page.permalink }}"
+                    class="text-[#235811] inline-block mt-4 font-bold hover:underline"
+                >
+                    Read more →
+                </a>
+            </article>
+            {% endfor %}
+        </div>
+    </section>
 
-</head>
+    <section class="mt-12">
+        <h2 class="text-2xl font-bold mb-6">Features</h2>
 
-{# 👇 Note: background image (e.g. 'bg-beams-light') is configured in tailwind.config.js 👇 #}
-
-<body class="bg-beams-light dark:bg-beams-dark bg-cover bg-fixed bg-center ">
-
-  {# Basic nav stuff #}
-  <nav class="flex text-gray-200 text-xl p-2 md:p-4">
-    <a href="{{ config.extra.project_gh }}" class="ml-auto h-10 w-10 md:h-16 md:w-16">
-      <svg class="fill-white" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-        <path
-          d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
-      </svg>
-    </a>
-  </nav>
-
-  {# Basic content #}
-  <main class="mx-auto px-4 prose md:prose-xl dark:prose-invert ">
-    <header>
-      {{ section.content | safe }}
-    </header>
-    <article class="my-[8vh] ">
-
-      {% set data = load_data(path="README.md") %}
-
-      {{ data | markdown | safe }}
-    </article>
-  </main>
-
-  {# Basic footer #}
-  <footer class="flex flex-col mt-24 bg-white/5 border-t border-blue-300">
-    {# <hr class="border-blue-300"> #}
-    <ul class="flex mx-auto py-12 text-gray-200 gap-2">
-      <li>
-        <p>Project <a href="{{ config.extra.author.website }}" class="text-yellow-100">
-            by {{ config.extra.author.name }}</a>
-        </p>
-      </li>
-      <li>|</li>
-      <li>
-        <p>View it <a href="{{ config.extra.project_gh }}" class="text-yellow-100"> on GitHUb </a></p>
-      </li>
-    </ul>
-  </footer>
-</body>
-
-</html>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {% for feature in config.extra.features %}
+            <a
+                href="{{ feature.link }}"
+                class="block bg-white p-4 rounded-lg border border-[#212420]/20 hover:bg-[#212420]/5 hover:shadow-md transition"
+            >
+                <div class="flex items-center">
+                    <div class="flex-grow">
+                        <h3 class="font-bold text-lg text-[#212420]">
+                            {{ feature.title }}
+                        </h3>
+                    </div>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-5 w-5 text-[#212420]/60"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M9 5l7 7-7 7"
+                        />
+                    </svg>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </section>
+</div>
+{% endblock content %}
