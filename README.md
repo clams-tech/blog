@@ -15,4 +15,3 @@ https://blog.clams.tech
 ## Build
 
 `zola build`
-d
