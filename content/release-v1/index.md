@@ -6,24 +6,17 @@ description = "We thought to ourselves - perhaps accounting is one of the larges
 
 ## How it started
 
-Before Clams, we were busy hacking on an interface for CLN. We weren't happy with the lack of a UI that could surface all of the cool features of [CLN](https://corelightning.org/) like [BOLT12](https://bolt12.org/), so we built [Remote](https://remote.clams.tech). After a year of node running, we were well on our way to realizing the dream of living on a Bitcoin standard... that was until we sat down to try and reconcile all of our transactions. An eclectic mix of onchain and lightning wallets, some custodial and some non-custodial, and of course some CSVs from our exchanges. After a long weekend of wrestling with custom scripts, we finally were able to reach a number for our cost basis and for our cap gains. It was brutal, manual, and definitely did not scale. It became clear to us that accounting issues were some of the biggest headaches we faced in our pursuit of exiting the fiat rails.
+Before Clams, we were busy hacking on an interface for [CLN](https://corelightning.org/). We weren't happy with the lack of a UI that could surface all of the cool features like [BOLT12](https://bolt12.org/), so we built [Remote](https://remote.clams.tech). After a year of node running, we were well on our way to realizing the dream of living on a Bitcoin standard... that was until we sat down to try and reconcile an eclectic mix of onchain and lightning transactions. Read more on those pain points [here](/hello-world).
 
-Here is a handful of the issues that took far too long for us to solve:
-
-- Dealing with cap gains events when spending.
-- Calculating cost basis across all wallets.
-- Tracking transfers between wallets you control.
-- Categorizing purchases to help with budgeting.
-
-We always try to remind ourselves of what it felt like. What we realized is that accounting is one of the largest pain points for anyone that wants to live on Bitcoin. Perhaps it is one of the main hurdles for kicking off Bitcoin circular economies? We asked ourselves - If living on a Bitcoin standard is the future we want - why don't we focus on tackling the accountancy problem?
+The TLDR is that we realized that accounting is one of the largest pain points for anyone that wants to live on Bitcoin. We have come to feel strongly that it is also hindering the proliferation of Bitcoin circular economies. We asked ourselves back then - if living on a Bitcoin standard is the future we want - why don't we shift our focus to tackling the accountancy problem?
 
 ## The MVP
 
-We first [debuted Clams](https://youtu.be/OaW0k9t2j4Q?feature=shared&t=34) in March 2024 to a room of fellow Bitcoiners in Austin, Texas. It was very much an MVP, something we had powered through in three months. Even then, we knew that we were onto something. From talking to people at the event we realized we were not the only ones facing similar challenges. We chatted with individuals managing their family finances. There were business owners getting paid in Bitcoin. Financial professionals like accountants and CFOs discussed how they manage Bitcoin payroll and treasuries for their clients.
+We [launched Clams](https://youtu.be/OaW0k9t2j4Q?feature=shared&t=34) in March 2024 to a room of fellow Bitcoiners in Austin, Texas. It was very much an MVP, something we had hacked together in three months. But even then, we knew that we were onto something. After talking to a bunch of people that day we realized we were not the only ones facing similar challenges. We have individuals managing their family finances. Business owners getting paid and paying bills in Bitcoin. Financial professionals like accountants and CFOs attempting to manage Bitcoin payroll and treasury functions for their clients.
 
-Although everyone had unique issues, we were determined to build towards a solution that could help them all. After launch, feedback filtered in via Discord, video calls and Nostr messages. Our backlog of feature requests and improvements started to grow. We had a pretty good handle already on the pain points that individuals faced, but it was very enlightening to learn more from the financial professionals.
+We became determined to build towards a solution that could more than just us, the individual sat stacker. After launch, feedback filtered in via Discord, video calls and Nostr messages and our backlog of feature requests and improvements started to grow. It was particularly enlightening to learn more from the financial professionals.
 
-To the beta testers, we can't thank you enough for taking the time to test and provide feedback. It really has been invaluable to us. It has helped us better understand exactly what we need Clams to do for you. You have all helped inform the direction that has brought us to this v1 release.
+To the beta testers, we cannot thank you enough for taking the time to download the app, test it out and provide feedback. It really has been invaluable to us. We now better understand exactly what Clams needs to do for you.
 
 Based on all the feedback, we focused on improving the app in these key areas:
 - Onboarding
@@ -36,22 +29,22 @@ Based on all the feedback, we focused on improving the app in these key areas:
 
 ## What has changed
 
-Well, not everything. All data stays on your device. The app is [private by design](/on-privacy) and it is focused on Bitcoin only. The core functions have remained the same:
+Well, not everything. All data still stays on your device. The app is [private by design](/on-privacy) and we are solely focused on Bitcoin. The core functionality has remained the same:
 
-- **Sync** - Bring all of your bitcoin transactions into one place
-- **Enhance** - Auto conversion of disparate data into unified double-entry journals. Enhance data set with custom tags and notes.
-- **Visualize** - Graphs and filters to help you gain insights about your bitcoin transactions that were once almost impossible.
-- **Export** - Export documents like full journal history and cap gains reports for any time frame.
+- **Sync** - Unify all Bitcoin transactions in one place.
+- **Enhance** - Convert raw data into organized journals with tags and notes.
+- **Visualize** - Gain insights through customizable charts and filters.
+- **Export** - Generate comprehensive reports for any time period.
 
-However, they have all improved - a lot.
+However, all of these functions have improved - a lot. In fact, the engine of the app has been entirely re-written in Rust. This has yielded an incredible improvement in performance. We set the explicit goal of the app handling lightning nodes with millions of transactions. Our new architecture can do just this.
 
-**NOTE** - We have decided to disable exports for now - and it will be reserved for a paid offering. More news on that very soon.
+**NOTE** - We have decided to disable exports for now - More news on that very soon.
 
 Now let's break down all the changes:
 
 ### Branding & Design
 
-The first thing that you will notice when you open the app is that structure is very different from previous releases. We opted for a more traditional side navigation. This will give us a lot more room to showcase each of the core features like connections, charts and exports. The brand has also changed dramatically. We have a new logo, fonts and color palette. We worked with our friends at Finite Supply on the brand and we are very happy with the results. We have some ideas for merch, welcome to idea on that front if you are interested.
+The first thing that you will notice when you open the app is that structure is very different from previous releases. We opted for a more traditional navigation that includes a sidebar. You have a dashboard where you can and add and view a list of all of your connections. Clicking on a connection will bring you to a dedicated page that expands on the connection to provide more details. We have a new logo, fonts and color palette. We worked with our friends at [Finite Supply](https://finitesupply.xyz/) on the brand overhaul and we are very happy with the results.
 
 ### Onboarding
 
