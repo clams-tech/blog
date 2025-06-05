@@ -149,3 +149,8 @@ li::marker {
     outline: 2px solid #212420;
     outline-offset: 2px;
 }
+
+.image-caption {
+    font-size: small;
+    text-align: center;
+}
